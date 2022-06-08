@@ -9,51 +9,61 @@ num8 = document.getElementById('8');
 num9 = document.getElementById('9');
 num0 = document.getElementById('0');
 nums = document.querySelectorAll('.num')
-console.log(nums);
+oPerators = document.querySelectorAll('.operator');
+equal = document.querySelector('.equal');
 
-nums.forEach(num => num.addEventListener("click", initilize))
+
+
 
 
 dumpf='',dumpl ='';
-operator = '+';
-console.log(operator);
+operator = '';
+
+let firstNum,lastNum,ans;
+
+function asign(){
+    operator = this.value;   
+    console.log(firstNum);
+    console.log(operator);
+    console.log(lastNum);
+    if(lastNum !== undefined){
+        console.log(lastNum);
+    }
+}
 
 function initilize(){
 if (operator == '') {
     dumpf += this.value;
-    parseInt(dumpf);
-    firstNum = dumpf
-    console.log(operator);
-    console.log(1);
+    firstNum = dumpf;
 } else {
-
     dumpl += this.value;
-    parseInt(dumpl);
-    lastNum = dumpl
-    console.log(operator);
-    console.log(2);
+    lastNum = dumpl;
 }
-
 };
 
-function operation(firstNum, operator , lastNum){
+function operation(){
+    dumpl = 0;
     switch (operator) {
         case '+':
-            return add(firstNum,lastNum);
+            ans = add(firstNum,lastNum);
             break;
         case '-':
-            return sub(firstNum,lastNum)
+            ans =  sub(firstNum,lastNum)
             break;
         case 'x':
-            return multiply(firstNum,lastNum)
+            ans =  multiply(firstNum,lastNum)
             break;
         case '÷':
-            return divide(firstNum,lastNum)
+            ans =  divide(firstNum,lastNum)
             break;
     }
+    
+    console.log(ans);
+    firstNum = ans;
+
 }
 function add(a,b){
-    return a + b;
+    return parseInt(a) + parseInt(b);
 }
 function sub(a,b){
     return a - b;
@@ -64,3 +74,8 @@ function multiply(a,b){
 function divide(a,b){
     return a/b;
 }
+
+
+nums.forEach(num => num.addEventListener("click", initilize))
+oPerators.forEach(oPerator => oPerator.addEventListener('click',asign))
+equal.addEventListener('click',operation);
