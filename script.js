@@ -14,9 +14,27 @@ console.log(nums);
 nums.forEach(num => num.addEventListener("click", initilize))
 
 
+dumpf='',dumpl ='';
+operator = '+';
+console.log(operator);
 
+function initilize(){
+if (operator == '') {
+    dumpf += this.value;
+    parseInt(dumpf);
+    firstNum = dumpf
+    console.log(operator);
+    console.log(1);
+} else {
 
+    dumpl += this.value;
+    parseInt(dumpl);
+    lastNum = dumpl
+    console.log(operator);
+    console.log(2);
+}
 
+};
 
 function operation(firstNum, operator , lastNum){
     switch (operator) {
