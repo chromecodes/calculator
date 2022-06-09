@@ -11,71 +11,97 @@ num0 = document.getElementById('0');
 nums = document.querySelectorAll('.num')
 oPerators = document.querySelectorAll('.operator');
 equal = document.querySelector('.equal');
+display1 = document.querySelector('.display-1')
+display2 = document.querySelector('.display-2')
+clearbtn = document.querySelector('.clear')
+
+console.log(nums);
 
 
+dumpf = '', dumpl = '', operator = '', display = '';
+
+let firstNum, lastNum, ans;
 
 
+function clear() {
+    dumpf = '', dumpl = '', operator = '', display = '';
+    firstNum = undefined, lastNum = undefined, ans = undefined;
+    display1.textContent = '';
+    display2.textContent = '';
+}
 
-dumpf='',dumpl ='';
-operator = '';
-
-let firstNum,lastNum,ans;
-
-function asign(){
-    operator = this.value;   
-    console.log(firstNum);
-    console.log(operator);
-    console.log(lastNum);
-    if(lastNum !== undefined){
+function asign() {
+    if (firstNum !== undefined) {
+        if (lastNum !== undefined) {
+            operation()
+        }
+        operator = this.value;
+        display1.textContent = `${firstNum} ${operator} `
+        console.log(display2.textContent);
+        console.log(typeof (operator));
         console.log(lastNum);
     }
 }
 
-function initilize(){
-if (operator == '') {
-    dumpf += this.value;
-    firstNum = dumpf;
-} else {
-    dumpl += this.value;
-    lastNum = dumpl;
-}
+function initilize() {
+    if (operator == '') {
+        dumpf += Number(this.value);
+        console.log(dumpf);
+        console.log(typeof(dumpf));
+        firstNum = dumpf;
+        display2.textContent = firstNum;
+
+    } else {
+        dumpl += this.value;
+        lastNum = dumpl;
+        display2.textContent = lastNum;
+
+    }
 };
 
-function operation(){
-    dumpl = 0;
-    switch (operator) {
-        case '+':
-            ans = add(firstNum,lastNum);
-            break;
-        case '-':
-            ans =  sub(firstNum,lastNum)
-            break;
-        case 'x':
-            ans =  multiply(firstNum,lastNum)
-            break;
-        case '÷':
-            ans =  divide(firstNum,lastNum)
-            break;
-    }
-    
-    console.log(ans);
-    firstNum = ans;
+function operation() {
+    if (firstNum !== undefined && lastNum !== undefined) {
+        dumpl = ''; dumpf = '';
+        switch (operator) {
+            case '+':
+                ans = add(firstNum, lastNum);
+                break;
+            case '-':
+                ans = sub(firstNum, lastNum)
+                break;
+            case 'x':
+                ans = multiply(firstNum, lastNum)
+                break;
+            case '÷':
+                ans = divide(firstNum, lastNum)
+                break;
+        }
+        if ((ans - Math.floor(ans)) !== 0) {
+            ans = Math.round(ans * 1000) / 1000
+        }
+        display1.textContent = `${firstNum} ${operator} ${lastNum} =`
+        display2.textContent = ans;
 
+        firstNum = ans;
+        operator = '';
+        lastNum = undefined;
+    }
 }
-function add(a,b){
-    return parseInt(a) + parseInt(b);
+function add(a, b) {
+    return Number(a) + Number(b) ;
 }
-function sub(a,b){
+function sub(a, b) {
     return a - b;
 }
-function multiply(a,b){
-    return a*b;
+function multiply(a, b) {
+    return a * b;
 }
-function divide(a,b){
-    return a/b;
+function divide(a, b) {
+    return a / b;
 }
 
 
 nums.forEach(num => num.addEventListener("click", initilize))
-oPerators.forEach(oPerator => oPerator.addEventListener('click',asign))
-equal.addEventListener('click',operation);
+oPerators.forEach(oPerator => oPerator.addEventListener('click', asign))
+equal.addEventListener('click', operation);
+clearbtn.addEventListener('click', clear);
