@@ -14,6 +14,7 @@ equal = document.querySelector('.equal');
 display1 = document.querySelector('.display-1')
 display2 = document.querySelector('.display-2')
 clearbtn = document.querySelector('.clear')
+deletebtn = document.querySelector('.delete')
 
 console.log(nums);
 
@@ -28,6 +29,21 @@ function clear() {
     firstNum = undefined, lastNum = undefined, ans = undefined;
     display1.textContent = '';
     display2.textContent = '';
+}
+
+function deletes(){
+    console.log(1);
+    console.log(firstNum);
+    console.log(lastNum);
+    if (lastNum == undefined) {
+        firstNum = firstNum.substr(0,(firstNum.length-1));
+        dumpf = firstNum
+        display2.textContent = firstNum;
+    } else {
+        lastNum = lastNum.substr(0,(lastNum.length-1));
+        dumpl = lastNum
+        display2.textContent = lastNum;
+    }
 }
 
 function asign() {
@@ -61,7 +77,6 @@ function initilize() {
         }
         lastNum = dumpl;
         display2.textContent = lastNum;
-
     }
 };
 
@@ -81,6 +96,9 @@ function operation() {
             case '÷':
                 ans = divide(firstNum, lastNum)
                 break;
+            case '^':
+                ans = power(firstNum, lastNum)
+                break;
         }
         if ((ans - Math.floor(ans)) !== 0) {
             ans = Math.round(ans * 1000) / 1000
@@ -88,10 +106,10 @@ function operation() {
         display1.textContent = `${firstNum} ${operator} ${lastNum} =`
         display2.textContent = ans;
 
-        firstNum = ans;
+        firstNum = ''+ans;
         operator = '';
         lastNum = undefined;
-    }
+    } 
 }
 function add(a, b) {
     return Number(a) + Number(b) ;
@@ -105,9 +123,13 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
+function power (a, b){
+    return a**b;
+}
 
 
 nums.forEach(num => num.addEventListener("click", initilize))
 oPerators.forEach(oPerator => oPerator.addEventListener('click', asign))
 equal.addEventListener('click', operation);
 clearbtn.addEventListener('click', clear);
+deletebtn.addEventListener('click', deletes);
