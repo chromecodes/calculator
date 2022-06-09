@@ -45,14 +45,20 @@ function asign() {
 
 function initilize() {
     if (operator == '') {
-        dumpf += Number(this.value);
-        console.log(dumpf);
-        console.log(typeof(dumpf));
+        dumpf += this.value;
+        if(`${Number(dumpf)}` == 'NaN' ){
+            tempf = dumpf
+            dumpf = tempf.substr(0,(tempf.length-1));
+        }
         firstNum = dumpf;
         display2.textContent = firstNum;
 
     } else {
         dumpl += this.value;
+        if(`${Number(dumpl)}` == 'NaN' ){
+            templ = dumpl
+            dumpl = templ.substr(0,(templ.length-1));
+        }
         lastNum = dumpl;
         display2.textContent = lastNum;
 
