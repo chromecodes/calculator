@@ -1,13 +1,4 @@
-const num1 = document.getElementById('1');
-num2 = document.getElementById('2');
-num3 = document.getElementById('3');
-num4 = document.getElementById('4');
-num5 = document.getElementById('5');
-num6 = document.getElementById('6');
-num7 = document.getElementById('7');
-num8 = document.getElementById('8');
-num9 = document.getElementById('9');
-num0 = document.getElementById('0');
+const
 nums = document.querySelectorAll('.num')
 oPerators = document.querySelectorAll('.operator');
 equal = document.querySelector('.equal');
@@ -59,9 +50,10 @@ function asign() {
     }
 }
 
-function initilize() {
+function initilize(e) {
+    console.log(e);
     if (operator == '') {
-        dumpf += this.value;
+        dumpf += e.target.value;
         if(`${Number(dumpf)}` == 'NaN' ){
             tempf = dumpf
             dumpf = tempf.substr(0,(tempf.length-1));
@@ -70,7 +62,7 @@ function initilize() {
         display2.textContent = firstNum;
 
     } else {
-        dumpl += this.value;
+        dumpl += e.target.value;
         if(`${Number(dumpl)}` == 'NaN' ){
             templ = dumpl
             dumpl = templ.substr(0,(templ.length-1));
@@ -85,28 +77,30 @@ function operation() {
         dumpl = ''; dumpf = '';
         switch (operator) {
             case '+':
-                ans = add(firstNum, lastNum);
+                ans = ''+add(firstNum, lastNum);
                 break;
             case '-':
-                ans = sub(firstNum, lastNum)
+                ans = ''+sub(firstNum, lastNum)
                 break;
             case 'x':
-                ans = multiply(firstNum, lastNum)
+                ans = ''+multiply(firstNum, lastNum)
                 break;
             case '÷':
-                ans = divide(firstNum, lastNum)
+                ans = ''+divide(firstNum, lastNum)
                 break;
             case '^':
-                ans = power(firstNum, lastNum)
+                ans = ''+power(firstNum, lastNum)
                 break;
         }
         if ((ans - Math.floor(ans)) !== 0) {
             ans = Math.round(ans * 1000) / 1000
+        } else if (ans.length > 10){
+            ans = ans.substr(0,9)+'e'+(ans.length - 9)
         }
         display1.textContent = `${firstNum} ${operator} ${lastNum} =`
         display2.textContent = ans;
 
-        firstNum = ''+ans;
+        firstNum = ans;
         operator = '';
         lastNum = undefined;
     } 
@@ -127,9 +121,26 @@ function power (a, b){
     return a**b;
 }
 
+function keyboard(e){
+    console.log(e.key);
+    if( e.key >= 0 && e.key < 10){
+        document.getElementById(`${e.key}`).click()
+    }else if( e.key == '+' || e.key == '-' || e.key == '/' || e.key == '*' || e.key == '^' ){
+        document.getElementById(`${e.key}`).click()
+    }else if (e.key === 'Backspace') {
+        document.querySelector('.delete').click();
+    }else if (e.key === 'Delete') {
+        document.querySelector('.clear').click();
+    }else if (e.key === '=' || e.key === 'Enter') {
+        document.querySelector('.equal').click();
+    }
+}
 
 nums.forEach(num => num.addEventListener("click", initilize))
 oPerators.forEach(oPerator => oPerator.addEventListener('click', asign))
 equal.addEventListener('click', operation);
 clearbtn.addEventListener('click', clear);
 deletebtn.addEventListener('click', deletes);
+window.addEventListener('keydown', keyboard)
+    
+
