@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer ></script>
 </head>
+
 <body>
     <div id="calculator" class="calculator">
         <div class="header"> Calculator </div>
@@ -19,21 +25,21 @@
         </div>
 
         <div class="buttons" id="buttons">
-            <button id="Delete" class="clear" >C</button>
+            <button id="Delete" class="clear">C</button>
             <button id="^" class="operator" value="^">x<sup>y</sup> </button>
             <button id="*" class="operator" value="x">x</button>
             <button id="/" class="operator" value="÷">÷</button>
 
             <button id="7" class="num 7" value="7">7</button>
             <button id="8" class="num 8" value="8">8</button>
-            <button id="9" class="num 9" value="9">9</button>  
+            <button id="9" class="num 9" value="9">9</button>
             <button id="-" class="operator" value="-">-</button>
 
             <button id="4" class="num 4" value="4">4</button>
             <button id="5" class="num 5" value="5">5</button>
             <button id="6" class="num 6" value="6">6</button>
             <button id="+" class="operator" value="+">+</button>
-            
+
             <button id="1" class="num 1" value="1">1</button>
             <button id="2" class="num 2" value="2">2</button>
             <button id="3" class="num 3" value="3">3</button>
@@ -43,8 +49,14 @@
             <button id="0" class="num 0" value="0">0</button>
             <button id="Backspace" class="delete"></button>
         </div>
-        <div class="footer"> Copyright © 2022 chromecodes 
-            <a href=""><i class="fa-brands fa-github"></i></a>
+        <div class="footer">
+          </span>
+            <span class="user">
+                The<a href="https://www.theodinproject.com/">Odin</a>Project
+                <a href="https://github.com/chromecodes/calculator"><i class="fa-solid fa-code"></i></a>
+                chromecodes
+                <a href="https://github.com/chromecodes"><i class="fa-brands fa-github"></i></a>
+            </span>
         </div>
     </div>
 
@@ -53,6 +65,7 @@
 
 
 
-    <script src="script.js"></script>
+   
 </body>
+
 </html>
