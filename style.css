@@ -196,3 +196,6 @@ button:active {
 .fa-github:hover {
     transform: rotate(720deg) scale(1.2);
 }
+.odin:hover {
+    transform:  scale(1.2);
+}
