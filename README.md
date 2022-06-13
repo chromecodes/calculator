@@ -1,51 +1,56 @@
-# Calculator
+# Calculator Project.No: 5
 
-This my fifth project
+The Project is to Build a Calculator using JavaScript, HTML and CSS.
 
-Project to create Calculator using only HTML, CSS and Vanilla JS.
+This Project is based on The Odin Project's [curriculum](https://www.theodinproject.com/courses/foundations/lessons/calculator).
 
-From The Odin Project's [curriculum](https://www.theodinproject.com/courses/foundations/lessons/calculator).
+🔗 **Have a Look ** [here](https://chromecodes.github.io/calculator/)
 
-🔗 **Live preview:** [here](https://artis-dev.github.io/calculator/)
+## Features:
+
+- Supported operations: power, divide, multiply, subtract, add.
+- Calculator calculates a single pair of numbers at a time
+- The numbers rounds up after three decimal places.
+- For those numbers can't able to display will shown as exponent value (upto 11 numbers).
+- It does have a keyboard compadability. ('^' is symbol for power operator)
 
 ## Built with
 
-### Technologies
-
-* HTML
-* CSS
-* JS
+- HTML
+- CSS
+- JS
 
 ### Tools
 
-* Visual Studio Code
-* Linux terminal
-* Git and GitHub
-* ESLint + Airbnb JavaScript Style Guide
+- Visual Studio Code
+- Linux terminal
+- Git and GitHub
 
-### Third party code
+### Third party compon
 
-* [modern-normalize](https://github.com/sindresorhus/modern-normalize)
-* [Google Fonts](https://fonts.google.com/)
-* [Font Awesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [ICON8](https://https://icons8.com/)
 
 ## Outcome
 
-* Used HTML5 **semantic elements** for better readability and structure.
-* Used CSS3 **grid** and **flex** to create layout.
-* Used **Git** and **GitHub** for project management.
-* Tried to maintain **clean code**.
-* **Cross tested** on Firefox and Chromium based browsers.
+- Used HTML5 **semantic elements** for better readability and structure.
+- Used CSS3 **grid** and **flex** to create layout.
+- Used **Git** and **GitHub** for project management.
+- Tried to maintain **clean code**.
+- **Cross tested** on Firefox and Chromium based browsers.
 
 ## Summary
 
 ### What I learned
 
-* Better knowledge of **Javascript**.
-* Learned to add **keyboard support**.
-* A lot of minor things.
+- Learned the basics of CSS **grid Span**.
+- Better knowledge of **Javascript**.
+- Learned more about **DOM manipulation** and **Event Listeners**.
+- A lot of minor things.
 
 ## Author
 
-👤 **ArtisDev**
-* GitHub: [Artis-Dev](https://github.com/artis-dev)
+👤 **chromecodes**
+
+- GitHub: [chromecodes](https://github.com/artis-dev)
