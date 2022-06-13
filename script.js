@@ -43,6 +43,8 @@ function deletes() {
  *    { set the operator value based on input }   **/
 
 function asign() {
+    console.log(1);
+    console.log(firstNum);
     if (firstNum !== undefined) {
         if (lastNum !== undefined) {
             operation()
@@ -57,6 +59,7 @@ function asign() {
 
 function initilize(e) {
     if (operator == '') {
+        console.log(this.value);
         dumpf += this.value;
         if (`${Number(dumpf)}` == 'NaN') {
             tempf = dumpf
@@ -64,6 +67,7 @@ function initilize(e) {
         }
         firstNum = dumpf;
         display2.textContent = firstNum;
+        console.log(firstNum);
     } else {
         dumpl +=this.value;
         if (`${Number(dumpl)}` == 'NaN') {
@@ -98,6 +102,7 @@ function operation() {
                 ans = '' + power(firstNum, lastNum);
                 break;
         }
+        console.log(ans);
         result();
     }
 }
@@ -106,18 +111,24 @@ function operation() {
  *    { showe's the result in display and reset the values }   **/
 
 function result(){
-
-    if ((ans - Math.floor(ans)) !== 0) {
-        ans = Math.round(ans * 1000) / 1000;
-    } else if (ans.length > 10) {
-        ans = ans.substr(0, 9) + 'e' + (ans.length - 9);
+    if(ans == 'ERROR...'){
+        display1.textContent = `${firstNum} ${operator} ${lastNum} =`;
+        display2.textContent = ans;
+        firstNum = undefined, lastNum = undefined, ans = undefined;
+        operator = '';
+    } else {
+        if ((ans - Math.floor(ans)) !== 0) {
+            ans = Math.round(ans * 1000) / 1000;
+        } else if (ans.length > 10) {
+            ans = ans.substr(0, 9) + 'e' + (ans.length - 9);
+        }
+        display1.textContent = `${firstNum} ${operator} ${lastNum} =`;
+        display2.textContent = ans;
+        firstNum = ans;
+        operator = '';
+        lastNum = undefined;
     }
-    display1.textContent = `${firstNum} ${operator} ${lastNum} =`;
-    display2.textContent = ans;
-
-    firstNum = ans;
-    operator = '';
-    lastNum = undefined;
+  
 }
 
 /**   MATH FUNCTION  **/
@@ -132,7 +143,11 @@ function multiply(a, b) {
     return a * b;
 }
 function divide(a, b) {
-    return a / b;
+    if ( b != '0'){
+        return a / b; 
+    } else {
+       return  'ERROR...'
+    }
 }
 function power(a, b) {
     return a ** b;
