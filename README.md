@@ -4,7 +4,7 @@ The Project is to Build a Calculator using JavaScript, HTML and CSS.
 
 This Project is based on The Odin Project's [curriculum](https://www.theodinproject.com/courses/foundations/lessons/calculator).
 
-🔗 **Have a Look ** [here](https://chromecodes.github.io/calculator/)
+🔗 **Here have a Look ** [here](https://chromecodes.github.io/calculator/)
 
 ## Features:
 
@@ -26,11 +26,11 @@ This Project is based on The Odin Project's [curriculum](https://www.theodinproj
 - Linux terminal
 - Git and GitHub
 
-### Third party compon
+### Third party component
 
 - [Google Fonts](https://fonts.google.com/)
 - [Font Awesome](https://fontawesome.com/)
-- [ICON8](https://https://icons8.com/)
+- [ICON8 - Favicon](https://https://icons8.com/)
 
 ## Outcome
 
@@ -49,7 +49,7 @@ This Project is based on The Odin Project's [curriculum](https://www.theodinproj
 - Learned more about **DOM manipulation** and **Event Listeners**.
 - A lot of minor things.
 
-## Author
+## Coded by
 
 👤 **chromecodes**
 
