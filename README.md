@@ -4,7 +4,7 @@ The Project is to Build a Calculator using JavaScript, HTML and CSS.
 
 This Project is based on The Odin Project's [curriculum](https://www.theodinproject.com/courses/foundations/lessons/calculator).
 
-🔗 **Here have a Look ** [here](https://chromecodes.github.io/calculator/)
+**Here have a Look at a** [ here](https://chromecodes.github.io/calculator/)**point_left**
 
 ## Features:
 
